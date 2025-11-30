@@ -13,7 +13,7 @@ def binary_search(arr, target):
         mid = (left + right) // 2
 
         if arr[mid] == target:
-            return mid + 1
+            return mid
         elif arr[mid] < target:
             left = mid + 1
         else:
@@ -22,4 +22,5 @@ def binary_search(arr, target):
     return -1
 
 for q in queries:
-    print(binary_search(arr, q))
+    index = binary_search(arr, q)
+    print(-1 if index < 0 else index + 1)
