@@ -2,11 +2,15 @@ n, k = map(int, input().split())
 arr = [int(input()) for _ in range(n)]
 
 # Please write your code here.
+arr.sort()
 cnt = 0
+l, r = 0, n - 1
 
-for i in range(n - 1):
-    for j in range(i + 1,n):
-        if arr[i] + arr[j] <= k:
-            cnt +=1
+while l < r:
+    if arr[l] + arr[r] <= k:
+        cnt += (r - l)
+        l += 1
+    else:
+        r -= 1
 
 print(cnt)
