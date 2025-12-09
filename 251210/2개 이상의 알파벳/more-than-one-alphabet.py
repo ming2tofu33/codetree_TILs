@@ -2,8 +2,16 @@ A = input()
 
 # Please write your code here.
 
-def check_letter(s):
-    letters = set(s)
-    return 'Yes' if len(letters) >= 2 else 'No'
+def is_more_twoalp(string):
+    leng = len(string)
+    for i in range(leng):
+        if string[i] != string[0]:
+            return True
+    
+    return False
 
-print(check_letter(A)) 
+
+if is_more_twoalp(A):
+    print("Yes")
+else:
+    print("No")
