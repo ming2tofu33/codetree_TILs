@@ -2,7 +2,7 @@ a, b = map(int, input().split())
 
 # Please write your code here.
 
-def calculate(a, b):
+def change_number(a, b):
     if a > b:
         a *= 2
         b += 10
@@ -12,5 +12,5 @@ def calculate(a, b):
 
     return a, b
 
-a, b = calculate(a, b)
+a, b = change_number(a, b)
 print(a, b)
