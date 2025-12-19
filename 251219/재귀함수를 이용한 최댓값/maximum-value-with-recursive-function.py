@@ -3,15 +3,10 @@ arr = list(map(int, input().split()))
 
 # Please write your code here.
 
-def get_max(n):
-    if n == 1:
-        return arr[n - 1]
+def get_max(a):
+    if a == 0:
+        return arr[0]
 
-    a = get_max(n - 1) 
-    if a > arr[n-1]:
-        return a
-    else:
-        return arr[n-1]
-    
+    return max(get_max(a-1), arr[a])
 
-print(get_max(n))
+print(get_max(n-1))
