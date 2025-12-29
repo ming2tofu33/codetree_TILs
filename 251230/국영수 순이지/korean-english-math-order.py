@@ -10,17 +10,13 @@ class Student:
 
 
 n = int(input())
-tests = []
+students = []
 
 for _ in range(n):
-    student_info = input().split()
-    name = student_info[0]
-    kor = int(student_info[1])
-    eng = int(student_info[2])
-    math = int(student_info[3])
-    tests.append(Student(name, kor, eng, math))
+    name, kor, eng, math = input().split()
+    students.append(Student(name, int(kor), int(eng), int(math)))
 
-tests.sort(key=lambda x: (x.kor, x.eng, x.math), reverse=True)
+students.sort(key=lambda x: (x.kor, x.eng, x.math), reverse=True)
 
-for t in tests:
-    print(t)
+for student in students:
+    print(student)
