@@ -18,5 +18,5 @@ while True:
     digits.append(num % b)
     num //= b
 
-for digit in digits:
+for digit in digits[::-1]:
     print(digit, end='')
