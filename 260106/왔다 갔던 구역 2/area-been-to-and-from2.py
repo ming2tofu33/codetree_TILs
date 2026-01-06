@@ -11,11 +11,13 @@ for _ in range(n):
     x = int(x)
 
     if d == 'L':
-        for i in range(loc-1, loc-x, -1):
+        for i in range(loc - 1, loc - x - 1, -1):
             line[i] += 1
+        loc -= x
     else:
-        for i in range(loc-x, loc+1):
+        for i in range(loc, loc + x):
             line[i] += 1
+        loc += x
 
 # print(line)
 # print(list(filter(lambda a: a >= 2, line)))
