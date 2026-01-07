@@ -18,5 +18,7 @@ for _ in range(n):
             tiles[i] = 0
         loc += x - 1
 
-print(tiles.count(1), tiles.count(0))
+white = tiles.count(1)
+black = tiles.count(0)
+print(white, black)
 # print(tiles[99990:])
