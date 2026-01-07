@@ -11,13 +11,11 @@ for _ in range(n):
     x = int(x)
     if cmd == 'L':
         for i in range(loc, loc - x, -1):
-            if tiles[i] == 0 or tiles[i] == -1:
-                tiles[i] = 1
-        loc -= x + 1
+            tiles[i] = 1
+        loc -= x - 1
     else:
         for i in range(loc, loc + x):
-            if tiles[i] or tiles[i] == -1:
-                tiles[i] = 0
+            tiles[i] = 0
         loc += x - 1
 
 print(tiles.count(1), tiles.count(0))
