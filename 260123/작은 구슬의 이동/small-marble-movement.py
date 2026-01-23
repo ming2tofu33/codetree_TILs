@@ -19,21 +19,22 @@ def is_wall(nr, nc):
         return True
     return False
 
-d_num = mapper[d]
+d_map = mapper[d]
 while t > 0:
-    nr = r + dr[d_num]
-    nc = c + dc[d_num]
+    nr = r + dr[d_map]
+    nc = c + dc[d_map]
 
     if is_wall(nr, nc):
-        nr = r + dr[(d_num + 2) % 4]
-        nc = c + dc[(d_num + 2) % 4]
-        d_num = (d_num + 2) % 4
+        nr = r + dr[(d_map + 2) % 4]
+        nc = c + dc[(d_map + 2) % 4]
+        d_map = (d_map + 2) % 4
         t -= 1
 
+    # print(nr, nc)
     r = nr
     c = nc
     
-    if t:
+    if t > 0:
         t -= 1
     else:
         break
