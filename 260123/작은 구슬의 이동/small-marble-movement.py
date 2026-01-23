@@ -2,41 +2,21 @@ n, t = map(int, input().split())
 r, c, d = input().split()
 r, c = int(r), int(c)
 
-# Please write your code here. 
-#    상, 우, 하, 좌
+# U, R, D, L
 dr = [-1, 0, 1, 0]
 dc = [0, 1, 0, -1]
+mapper = {'U': 0, 'R': 1, 'D': 2, 'L': 3}
 
-mapper = {
-    'U': 0,
-    'R': 1,
-    'D': 2,
-    'L': 3,
-}
+d = mapper[d]
 
-def is_wall(nr, nc):
-    if 1 > nr or nr > n+1 or 1 > nc or nc > n+1:
-        return True
-    return False
+def is_wall(x, y):
+    return x < 1 or x > n or y < 1 or y > n
 
-d_map = mapper[d]
-while t > 0:
-    nr = r + dr[d_map]
-    nc = c + dc[d_map]
-
+for _ in range(t):
+    nr, nc = r + dr[d], c + dc[d]
     if is_wall(nr, nc):
-        nr = r + dr[(d_map + 2) % 4]
-        nc = c + dc[(d_map + 2) % 4]
-        d_map = (d_map + 2) % 4
-        t -= 1
-
-    # print(nr, nc)
-    r = nr
-    c = nc
-    
-    if t > 0:
-        t -= 1
+        d = (d + 2) % 4   # 방향만 반대로 (시간 1초 소비, 위치 그대로)
     else:
-        break
+        r, c = nr, nc     # 한 칸 이동
 
 print(r, c)
