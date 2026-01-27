@@ -7,8 +7,8 @@ dr = [1, 0, -1, 0]
 dc = [0, 1, 0, -1]
 r, c, d = 0, 0, 0
 
-def is_end(r, c):
-    return 0 > r or N <= r or 0 > c or M <= c
+def is_end(x, y):
+    return 0 > x or N <= x or 0 > y or M <= y
         
 for num in range(1, N*M + 1):
     mat[r][c] = num
